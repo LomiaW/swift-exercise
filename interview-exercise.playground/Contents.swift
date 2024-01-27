@@ -3,9 +3,9 @@ import Foundation
 
 /* Exercise 1: String Manipulation and Interpolation */
 
-// immutable variables
-let greeting = "Hello"
-let name = "Lomia"
+// immutable variables, const variable
+let greeting: String = "Hello"  // type-structured
+let name: String = "Lomia"
 
 // mutable variable
 var welcomeMessage = greeting + ", " + name  // Concatenation
@@ -17,7 +17,7 @@ print("The welcome message contains a length of \(welcomeMessage.count)")  // In
 
 
 /* Exercise 2: Working with Arrays and Loops */
-var nums:[Int] = [21, 33, 4, 76, 16]
+var nums:[Int] = [ 21, 33, 4, 76, 16 ]
 
 for n in nums {     // For loop
     print(n)
@@ -33,13 +33,15 @@ print("The modified array:", nums)
 
 
 /* Exercise 3: Functions and Parameter Passing */
-func calculateArea(length: Int = 3, width: Int = 4) -> Int {
-    return length * width
+func calculateArea(
+    _ length: Int,  // using _ as the external label
+    _ width: Int? = 4   // using optional parameter
+) -> Int {
+    return length * width!
 }
+print("The area of a rectangle:", calculateArea(4, 4))
+print("The area of a rectangle:", calculateArea(5))
 
-print("The area of a rectangle:", calculateArea(length: 4, width: 4))
-print("The area of a rectangle:", calculateArea(length: 5))
-print("The area of a square:", calculateArea())
 
 /*  Exercise 4: Enumerations and Switch Statements  */
 // Enum creation
@@ -67,8 +69,6 @@ switch mySeason {
         print("Autumn!")
     case .winter:
         print("Winter!")
-    default:
-        print("Seasons!")
 }
 
 print(mySeason.description)

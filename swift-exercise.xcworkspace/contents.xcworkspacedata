@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:learning-swift.playground">
+   </FileRef>
+   <FileRef
       location = "group:interview-exercise.playground">
    </FileRef>
 </Workspace>
